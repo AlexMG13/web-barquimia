@@ -1,12 +1,20 @@
 import './App.css'
-import CocteleriaLanding from './components/CocteleriaLanding'
+import Header from './components/Header'
+import Contact from './components/Contact'
+import Calculator from './components/Calculator'
+import Hero from './components/Hero'
+import Recomendation from './components/Recomendation'
 
 function App() {
 
   return (
-    <>
-      <CocteleriaLanding />
-    </>
+    <div className="">
+      <Header />
+      <Hero />
+      <Calculator />
+      <Recomendation />
+      <Contact />
+    </div>
   )
 }
 
