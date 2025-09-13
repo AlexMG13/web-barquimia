@@ -13,8 +13,8 @@ export default function CocteleriaLanding() {
   const [selectedFlavor, setSelectedFlavor] = useState("citrico");
 
   // Cálculo simple de ingredientes
-  const estimatedAlcohol = (people * 0.15).toFixed(1); // 150ml por persona
-  const estimatedMixers = (people * 0.25).toFixed(1); // 250ml por persona
+  const estimatedAlcohol = (people * 0.18).toFixed(1); // 180ml por persona
+  const estimatedMixers = (people * 0.30).toFixed(1); // 300ml por persona
 
   // Recomendación de cócteles
   const recommended = cocktails.filter((c) => c.flavor === selectedFlavor);
