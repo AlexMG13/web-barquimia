@@ -14,6 +14,7 @@ function App() {
       <Calculator />
       <Recomendation />
       <Contact />
+      <Calculator />
     </div>
   )
 }

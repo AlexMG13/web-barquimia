@@ -17,10 +17,11 @@ export default function Hero() {
       />
 
       {/* Texto */}
-      <div className="text-center md:text-left max-w-md">
-        <p className="text-lg md:text-xl font-semibold text-gray-800">
-          Somos un servicio de coctelería para{" "}
-          <span className="text-blue-600 font-bold">TU</span> evento.
+      <div className="font-libre italic font-bold text-center md:text-left max-w-md">
+        <p className="text-lg md:text-6xl">
+          Somos él servicio de coctelería <br/>
+          para{" "}
+          <span className=" italic text-blue-600 font-bold">TU</span> evento.
         </p>
       </div>
     </div>
