@@ -5,8 +5,8 @@ function LabelConInfo({ children, descripcion }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="relative w-fit">
-      <label className="text-lg font-semibold flex items-center gap-2">
+    <div className="relative flex flex-col items-center">
+      <label className="text-base sm:text-lg font-semibold flex items-center gap-2 justify-center">
         {children}
         <button
           type="button"
@@ -18,7 +18,7 @@ function LabelConInfo({ children, descripcion }) {
       </label>
 
       {open && (
-        <div className="absolute z-10 mt-2 p-3 bg-gray-100 text-gray-800 text-sm rounded-xl shadow-lg max-w-xs">
+        <div className="absolute top-full mt-2 p-3 bg-gray-100 text-gray-800 text-sm rounded-xl shadow-lg max-w-[90vw] text-center">
           {descripcion}
         </div>
       )}
@@ -67,12 +67,17 @@ export default function Calculator() {
   const resultado = calcular();
 
   return (
-    <section id="calculadora" className="min-h-screen flex flex-col items-center justify-center gap-6 p-6">
-      <h1 className="text-4xl font-bold text-center">Calculadora de Insumos</h1>
+    <section
+      id="calculadora"
+      className="min-h-screen flex flex-col items-center justify-center gap-4 sm:gap-6 px-4 py-6"
+    >
+      <h1 className="text-2xl sm:text-4xl font-bold text-center">
+        Calculadora de Insumos
+      </h1>
 
       {/* Formulario */}
-      <div className="bg-white shadow-lg rounded-2xl p-6 w-full max-w-2xl space-y-4">
-        <div className="flex flex-col">
+      <div className="bg-white shadow-lg rounded-2xl p-4 sm:p-6 w-full max-w-2xl mx-auto flex flex-col items-center space-y-4">
+        <div className="flex flex-col items-center w-full">
           <LabelConInfo descripcion="Número total de invitados que asistirán al evento.">
             Cantidad de personas
           </LabelConInfo>
@@ -81,11 +86,11 @@ export default function Calculator() {
             min={1}
             value={people}
             onChange={(e) => setPeople(Number(e.target.value))}
-            className="border rounded-lg px-4 py-2 text-center focus:ring-2 focus:ring-blue-400 focus:outline-none"
+            className="border rounded-lg px-3 py-2 text-center focus:ring-2 focus:ring-blue-400 focus:outline-none mx-auto w-full max-w-xs"
           />
         </div>
 
-        <div className="flex flex-col">
+        <div className="flex flex-col items-center w-full">
           <LabelConInfo descripcion="Duración estimada del evento en horas. A mayor duración, mayor consumo.">
             Duración (horas)
           </LabelConInfo>
@@ -94,18 +99,18 @@ export default function Calculator() {
             min={1}
             value={duration}
             onChange={(e) => setDuration(Number(e.target.value))}
-            className="border rounded-lg px-4 py-2 text-center focus:ring-2 focus:ring-blue-400 focus:outline-none"
+            className="border rounded-lg px-3 py-2 text-center focus:ring-2 focus:ring-blue-400 focus:outline-none mx-auto w-full max-w-xs"
           />
         </div>
 
-        <div className="flex flex-col">
+        <div className="flex flex-col items-center w-full">
           <LabelConInfo descripcion="El tipo de evento afecta el consumo promedio: en fiestas suele consumirse más que en reuniones formales.">
             Tipo de evento
           </LabelConInfo>
           <select
             value={eventType}
             onChange={(e) => setEventType(e.target.value)}
-            className="border rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+            className="border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none mx-auto w-full max-w-xs text-center"
           >
             <option value="informal">Informal</option>
             <option value="fiesta">Fiesta</option>
@@ -114,14 +119,14 @@ export default function Calculator() {
           </select>
         </div>
 
-        <div className="flex flex-col">
+        <div className="flex flex-col items-center w-full">
           <LabelConInfo descripcion="El rango de edad influye en el consumo: los jóvenes tienden a consumir más que los adultos mayores.">
             Rango etario predominante
           </LabelConInfo>
           <select
             value={ageGroup}
             onChange={(e) => setAgeGroup(e.target.value)}
-            className="border rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+            className="border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none mx-auto w-full max-w-xs text-center"
           >
             <option value="jovenes">Jóvenes (18-30)</option>
             <option value="adultos">Adultos (30-50)</option>
@@ -129,7 +134,7 @@ export default function Calculator() {
           </select>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 justify-center">
           <input
             type="checkbox"
             checked={includeNonAlcoholic}
@@ -143,7 +148,7 @@ export default function Calculator() {
       </div>
 
       {/* Resultados */}
-      <div className="bg-gray-50 shadow-md rounded-2xl p-6 w-full max-w-2xl space-y-2 text-lg">
+      <div className="bg-gray-50 shadow-md rounded-2xl p-4 sm:p-6 w-full max-w-2xl mx-auto space-y-2 text-center text-base sm:text-lg">
         <p><strong>Cervezas:</strong> {resultado.cervezas} botellas/latas (≈ 330ml)</p>
         <p><strong>Vino:</strong> {resultado.botellasVino} botellas (750ml)</p>
         <p><strong>Destilados:</strong> {resultado.botellasDestilado} botellas (750ml)</p>

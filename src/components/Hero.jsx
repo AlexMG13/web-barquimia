@@ -21,8 +21,8 @@ export default function Hero() {
         <p className="text-lg md:text-6xl">
           Somos él servicio de coctelería <br/>
           para{" "}
-          <span className=" italic text-blue-600 font-bold">TU</span> evento.
-        </p>
+          <span className=" italic text-blue-600 font-bold">TU</span></p>
+          <p className="text-lg md:text-6xl">evento.</p>         
       </div>
     </div>
   );

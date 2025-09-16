@@ -8,13 +8,12 @@ import Recomendation from './components/Recomendation'
 function App() {
 
   return (
-    <div className="">
+    <div>
       <Header />
       <Hero />
       <Calculator />
       <Recomendation />
       <Contact />
-      <Calculator />
     </div>
   )
 }
